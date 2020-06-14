@@ -1,5 +1,6 @@
 ---
-- name: change root password
-  user:
-    name: "root"
-    password: "{{ root_password|password_hash('sha512') }}"
+- name: delete user
+  user: 
+    name={{ delete_user }}
+    state=absent
+    remove=yes
